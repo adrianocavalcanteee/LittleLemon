@@ -1,0 +1,22 @@
+
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+*.log
+local_settings.py
+
+venv/
+env/
+ENV/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Não ignorar db.sqlite3 para este projeto
+# !db.sqlite3

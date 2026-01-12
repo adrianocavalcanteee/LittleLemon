@@ -1,0 +1,91 @@
+=================================================
+LITTLE LEMON API - CREDENCIAIS DE ACESSO
+=================================================
+
+BANCO DE DADOS: SQLite (db.sqlite3)
+
+USUÁRIOS CRIADOS:
+-------------------------------------------------
+
+👨‍💼 ADMIN (Superusuário):
+   Username: admin
+   Password: admin123
+   Email: admin@littlelemon.com
+
+👔 MANAGER:
+   Username: manager1
+   Password: manager123
+   Email: manager@littlelemon.com
+   Grupo: Manager
+
+🚚 DELIVERY CREW:
+   Username: delivery1
+   Password: delivery123
+   Email: delivery@littlelemon.com
+   Grupo: Delivery Crew
+
+👤 CUSTOMER:
+   Username: customer1
+   Password: customer123
+   Email: customer@littlelemon.com
+   Grupo: (nenhum - cliente normal)
+
+=================================================
+ENDPOINTS DA API:
+=================================================
+
+AUTENTICAÇÃO:
+- POST /api/token/ - Obter token JWT
+- POST /api/token/refresh/ - Renovar token
+
+CATEGORIAS:
+- GET/POST /api/categories
+
+MENU ITEMS:
+- GET/POST /api/menu-items
+- GET/PUT/PATCH/DELETE /api/menu-items/{id}
+
+CARRINHO:
+- GET/POST /api/cart/menu-items
+- DELETE /api/cart/menu-items (limpar carrinho)
+
+PEDIDOS:
+- GET/POST /api/orders
+- GET/PUT/PATCH/DELETE /api/orders/{id}
+
+GERENCIAMENTO DE USUÁRIOS (apenas Manager):
+- GET/POST /api/groups/manager/users
+- DELETE /api/groups/manager/users/{id}
+- GET/POST /api/groups/delivery-crew/users
+- DELETE /api/groups/delivery-crew/users/{id}
+
+=================================================
+COMO TESTAR:
+=================================================
+
+1. Instalar dependências:
+   pipenv install
+
+2. Ativar ambiente virtual:
+   pipenv shell
+
+3. Aplicar migrações:
+   python manage.py migrate
+
+4. Popular banco de dados:
+   python populate_db.py
+
+5. Iniciar servidor:
+   python manage.py runserver
+
+6. Testar com script:
+   python test_api.py
+
+7. Acessar Admin:
+   http://127.0.0.1:8000/admin
+
+8. Acessar API:
+   http://127.0.0.1:8000/api/menu-items
+
+=================================================
+
